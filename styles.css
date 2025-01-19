@@ -1,0 +1,161 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(213, 235, 213);
+}
+/* Add margin to the top of the main content */
+.main-content {
+    margin-top: 180px; /* Adjust based on the height of your header */
+}
+/* Layout container */
+.header {
+    /* position: fixed; */
+    display: flex;
+    position: fixed;
+    top: 0; /* Stick it to the top of the page */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans across the full width */
+    z-index: 1000; /* Ensure it's on top of other content */
+    justify-content: space-between; /* Space between name and navbar */
+    align-items: center; /* Align items vertically */
+    padding: 10px;
+    background-color: #8E5A3A; /* Background color for header */
+    color: white;
+}
+
+/* Name and job title container */
+/* Name and job title container */
+.header-left {
+    display: flex;
+    align-items: flex-start; /* Align profile image and text at the start */
+}
+
+/* Profile picture styling */
+.profile-picture {
+    width: 100px; /* Adjust the size of the image */
+    height: auto;
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Text container (name and job title) */
+.header-left h1 {
+    margin: 0;
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+}
+.header-left p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.header-left .text {
+    display: flex;
+    flex-direction: column; /* Stack name and job title vertically */
+}
+
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #8A9A5B; /* Dark background */
+    overflow: hidden; /* Ensures content doesn't overflow */
+    text-align: center; /* Center the content */
+    font-size: 20px;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove list bullets */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline; /* Display list items in a row */
+    margin-right: 20px; /* Space between links */
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color */
+    padding: 14px 20px; /* Add padding around the links */
+    display: inline-block; /* Ensure links are inline */
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Light background on hover */
+    color: black; /* Change text color on hover */
+}
+
+/* Image styles */
+.image-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* align-self: center;
+    padding: 20px;
+    box-sizing: border-box; */
+}
+
+.image-container img{
+    width: 30%;
+    height: auto;
+    /* border: 0.12rem solid black; */
+}
+
+/* Profile picture styling */
+.profile-picture {
+    width: 8rem; /* Adjust the size of the image */
+    height: auto;
+    border-radius: 20%; /* Makes the image circular */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+h1, p {
+    margin: 0; /* Remove default margins */
+}
+
+/* Contact info section */
+.contact-info {
+    background-color: #8E5A3A; /* Same background as header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Add space above the contact section */
+}
+
+/* Paragraph style for contact info */
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #8E5A3A;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Add margin to the top of the about content */
+.about-content {
+    margin-top: 180px; /* Adjust based on the height of your header */
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
