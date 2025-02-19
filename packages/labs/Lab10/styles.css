@@ -1,0 +1,87 @@
+@import url('tokens.css');
+
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-secondary);
+    background-color: var(--color-bg);
+}
+
+/* Add margin to the top of the main content */
+.main-content {
+    margin-top: 180px; /* Adjust based on the height of your header */
+}
+
+/* Image styles */
+.image-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-container img {
+    width: 30%;
+    height: auto;
+}
+
+/* Profile picture styling */
+.profile-picture {
+    width: 8rem;
+    height: auto;
+    border-radius: 20%;
+    margin-bottom: 10px;
+}
+
+h1, p {
+    margin: 0;
+}
+
+/* Contact info section with grid layout */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-large);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    text-align: center;
+}
+
+/* New styling for the left and right columns */
+.contact-info .left-column,
+.contact-info .right-column {
+    padding: var(--spacing-medium);
+}
+
+/* New larger profile photo styling */
+.profile-picture-large {
+    width: 24rem; /* Larger size than the header image */
+    height: auto;
+    border-radius: 20%;
+    display: block;
+    margin: 0 auto var(--spacing-medium) auto;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Add margin to the top of the about content */
+.about-content {
+    margin-top: 180px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    color: var(--color-text);
+}
+
+/* h3 {
+    font-size: 
+} */

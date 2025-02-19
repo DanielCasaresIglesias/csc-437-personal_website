@@ -1,0 +1,36 @@
+:root {
+    /* Colors */
+    --color-primary: #8E5A3A;
+    --color-secondary: #8A9A5B;
+    --color-bg: rgb(213, 235, 213);
+    --color-text: black;
+    --color-text-header: white;
+    --color-hover: #ddd;
+    --color-hover-text: black;
+
+    /* Font */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: Arial, sans-serif;
+
+    /* Spacing */
+    --spacing-large: 20px;
+    --spacing-medium: 10px;
+}
+
+body.dark-mode {
+    --color-primary: #101070;
+    --color-secondary: #333;
+    --color-bg: #00004d;
+    --color-text: #e8ffff;
+    --color-text-header: white;
+    --color-hover: #ffa576;
+    --color-hover-text: white;
+
+    /* Font */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: Arial, sans-serif;
+
+    /* Spacing */
+    --spacing-large: 20px;
+    --spacing-medium: 10px;
+}
