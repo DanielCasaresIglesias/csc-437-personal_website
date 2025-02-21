@@ -1,39 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import TodoItem from './TodoItem';
+import AddTaskForm from './AddTaskForm';
 
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
-import TodoItem from './TodoItem'; // Import the TodoItem component
-import AddTaskForm from './AddTaskForm'; // Import the AddTaskForm component
+const INITIAL_TASK_LIST = [
+  { id: 1, name: 'Eat', completed: false },
+  { id: 2, name: 'Sleep', completed: false },
+  { id: 3, name: 'Repeat', completed: false }
+];
 
 function App() {
-  // Task state with data for each task
-  const [tasks, setTasks] = useState([
-    { id: 1, name: 'Eat' },
-    { id: 2, name: 'Sleep' },
-    { id: 3, name: 'Repeat' },
-  ]);
+  const [taskList, setTaskList] = useState(INITIAL_TASK_LIST);
 
-  // Function to add tasks
-  const addTask = (newTask) => {
-    setTasks((prevTasks) => [...prevTasks, newTask]);
+  // Add task function
+  const addTask = (taskName) => {
+    const newTask = { id: Date.now(), name: taskName, completed: false };
+    setTaskList((prevTaskList) => [...prevTaskList, newTask]);
+  };
+
+  // Toggle task completion
+  const toggleCompletion = (id) => {
+    setTaskList((prevTaskList) =>
+      prevTaskList.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  // Delete task function
+  const deleteTask = (taskId) => {
+    setTaskList((prevTaskList) => prevTaskList.filter((task) => task.id !== taskId));
+  };
+
+  // Delete all tasks
+  const deleteAllTasks = () => {
+    setTaskList([]);
   };
 
   return (
     <main className="m-4">
-      {/* Add Task Form */}
-      <AddTaskForm addTask={addTask} /> {/* Pass the addTask function to AddTaskForm */}
+      <AddTaskForm onNewTask={addTask} />
+      <button onClick={deleteAllTasks} className="p-1 bg-red-600 text-white">
+        Delete all
+      </button>
 
-      {/* Todo List */}
       <section className="mt-6">
         <h1 className="text-xl font-bold">To do</h1>
         <ul>
-          {tasks.map((task) => (
-            <TodoItem key={task.id} task={task} /> // Dynamically render TodoItem
+          {taskList.map((task) => (
+            <TodoItem
+              key={task.id}
+              task={task}
+              onToggleCompletion={toggleCompletion}
+              onDelete={() => setTaskList(taskList.filter((t) => t.id !== task.id))}
+            />
           ))}
         </ul>
       </section>
