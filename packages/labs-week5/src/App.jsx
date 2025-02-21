@@ -3,6 +3,7 @@ import './App.css';
 import TodoItem from './TodoItem';
 import AddTaskForm from './AddTaskForm';
 import Modal from './Modal';
+import { GroceryPanel } from './GroceryPanel';
 
 function App() {
   const [taskList, setTaskList] = useState([
@@ -73,6 +74,9 @@ function App() {
           ))}
         </ul>
       </section>
+
+      {/* Grocery Price List */}
+      <GroceryPanel onAddTask={addTask} />
     </main>
   );
 }

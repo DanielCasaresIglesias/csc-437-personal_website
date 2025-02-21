@@ -1,0 +1,29 @@
+/* Add padding to table header (th) and data (td) elements */
+table th, table td {
+    padding-left: 1rem;  /* Horizontal padding on the left */
+    padding-right: 1rem; /* Horizontal padding on the right */
+  }
+  
+  /* Optionally, add some spacing to the table rows */
+  table tr {
+    padding-bottom: 0.5rem;  /* Adds vertical space between rows */
+  }
+  
+  /* Style for better readability */
+  table th {
+    text-align: left;  /* Align header text to the left */
+    background-color: #f3f4f6;  /* Light background for headers */
+    font-weight: bold; /* Make the header text bold */
+  }
+  
+  table td {
+    text-align: left;  /* Align data text to the left */
+    border-bottom: 1px solid #ddd; /* Add bottom borders to data cells */
+  }
+  
+  /* Optional: Add some space between rows for a cleaner look */
+  table {
+    border-collapse: collapse;
+    width: 100%;  /* Make sure the table spans the entire width */
+  }
+  
