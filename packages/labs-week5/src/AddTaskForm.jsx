@@ -1,29 +1,35 @@
-// AddTaskForm.jsx
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function AddTaskForm({ onNewTask }) {
-  const [taskName, setTaskName] = useState(''); // Track the text field state
+  const [taskName, setTaskName] = useState('');
 
+  // Handle input change
+  const handleChange = (e) => {
+    setTaskName(e.target.value);
+  };
+
+  // Handle Add Task button click
   const handleAddTask = () => {
     if (taskName.trim()) {
-      onNewTask(taskName); // Pass the task name to the parent (App)
-      setTaskName(''); // Clear the input field after adding the task
+      onNewTask(taskName); // Add new task to parent
+      setTaskName(''); // Clear the input field
     }
   };
 
   return (
-    <div className="flex items-center space-x-2">
+    <div>
       <input
-        className="w-50 h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border-2 border-black rounded-md pl-3 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-black hover:border-black"
-        placeholder="New task name"
+        type="text"
         value={taskName}
-        onChange={(e) => setTaskName(e.target.value)} // Update the state on change
+        onChange={handleChange}
+        className="w-full p-2 border-2 border-black rounded-md mb-2"
+        placeholder="New task name"
       />
       <button
-        className="w-auto bg-blue-500 hover:bg-blue-700 active:bg-blue-900 text-white font-normal px-2 rounded flex items-center"
-        onClick={handleAddTask} // Call handleAddTask on click
+        onClick={handleAddTask}
+        className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
-        Add task
+        Add Task
       </button>
     </div>
   );
